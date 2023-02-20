@@ -10,5 +10,12 @@
   <Subject />
 </div>
 
-<style>
+<style scoped>
+  div {
+    width: 1920px;
+    height: 1080px;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: max-content 1fr;
+  }
 </style>
