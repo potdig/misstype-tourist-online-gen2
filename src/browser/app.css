@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&display=swap');
+
+body {
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#app {
+  display: flex;
+  flex-wrap: wrap;
+  color: #ffffff;
+  letter-spacing: 4px;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.border-2 {
+  text-shadow:
+       2px  2px 0px #000000,
+      -2px  2px 0px #000000,
+       2px -2px 0px #000000,
+      -2px -2px 0px #000000,
+       2px  0px 0px #000000,
+       0px  2px 0px #000000,
+      -2px  0px 0px #000000,
+       0px -2px 0px #000000;
+}
+
+.border-3 {
+  text-shadow:
+       3px  3px 0px #000000,
+      -3px  3px 0px #000000,
+       3px -3px 0px #000000,
+      -3px -3px 0px #000000,
+       3px  0px 0px #000000,
+       0px  3px 0px #000000,
+      -3px  0px 0px #000000,
+       0px -3px 0px #000000;
+}
+
+#video {
+  background-color: rgba(0, 0, 0, 20%);
+  width: calc(1920px * 0.9);
+  height: calc(1080px * 0.9);
+}
+
+#side {
+  font-size: 1.6em;
+  width: calc(1920px * 0.08);
+  padding-top: 1em;
+  margin-left: calc(1920px * 0.01);
+}
+
+.member {
+  display: flex;
+  flex-direction: column;
+}
+
+.member.guest {
+  color: lightskyblue;
+}
+
+.score {
+  align-self: flex-end;
+}
+
+#bottom {
+  height: calc(1080px * 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: bold;
+  margin-left: 1em;
+}
+
+#bottom p {
+  margin: 0;
+}
+
+#main-caption {
+  font-size: 2.8em;
+  line-height: 1.2em;
+}
+
+#sub-caption {
+  font-size: 1.6em;
+}
