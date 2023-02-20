@@ -1,0 +1,1 @@
+type Subjects = [string, string]

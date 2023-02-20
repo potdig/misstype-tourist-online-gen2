@@ -19,6 +19,7 @@
     "vite": "^4.1.0"
   },
   "dependencies": {
+    "@rollup/plugin-typescript": "^11.0.0",
     "ts-nodecg": "^0.3.1"
   }
 }
