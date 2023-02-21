@@ -1,8 +1,14 @@
+<script>
+  import { scores } from '~/browser/store/score'
+</script>
+
 <div id="side">
-  <div class="member guest">
-    <span class="border-2">ルゼ</span>
-    <span class="score border-2">0点</span>
-  </div>
+  {#each $scores as score}
+    <div class={`member ${score.isGuest ? 'guest' : ''}`}>
+      <span class="border-2">{score.name}</span>
+      <span class="score border-2">{score.score}点</span>
+    </div>
+  {/each}
 </div>
 
 <style scoped>

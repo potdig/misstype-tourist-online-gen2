@@ -1,6 +1,10 @@
+<script>
+  import { subjects } from '~/browser/store/subjects'
+</script>
+
 <div id="bottom">
-  <p id="main-caption" class="border-3">誤字ツーリスト2023Online 夏の陣</p>
-  <p id="sub-caption" class="border-2">Feign</p>
+  <p id="main-caption" class="border-3">{$subjects[0]}</p>
+  <p id="sub-caption" class="border-2">{$subjects[1]}</p>
 </div>
 
 <style>
