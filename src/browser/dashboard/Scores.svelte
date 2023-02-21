@@ -31,6 +31,10 @@
 </div>
 
 <style>
+  p {
+    margin: 0;
+  }
+
   #scoreboard {
     display: flex;
     flex-direction: column;
