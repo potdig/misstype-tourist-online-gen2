@@ -23,4 +23,8 @@ export type MessageMap = {
     data: AddMemberArgs
     result: boolean
   }
+  deleteMember: {
+    data: string
+    result: boolean
+  }
 }

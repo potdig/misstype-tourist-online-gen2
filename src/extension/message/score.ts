@@ -43,4 +43,14 @@ export default function initScores(nodecg: NodeCG) {
 
     cb && cb(null, true)
   })
+
+  nodecg.listenFor('deleteMember', (name, cb) => {
+    if (!cb || cb.handled) {
+      return
+    }
+
+    scoresRep.value = scoresRep.value.filter(score => score.name !== name)
+
+    cb && cb(null, true)
+  })
 }

@@ -7,10 +7,14 @@
   function setAddedScoreToStore() {
     updateAddedScore(score.name, addedScore)
   }
+
+  function remove() {
+    window.nodecg.sendMessage('deleteMember', score.name)
+  }
 </script>
 
 <div class="member">
-  <!-- <span class="remove-member" @click="remove(member)">×</span> -->
+  <button class="remove-member" on:click={remove}>×</button>
   {score.name}{score.isGuest ? '（ゲスト）' : ''}: {score.score} +
   <input
     bind:value={addedScore}
@@ -33,6 +37,10 @@
   }
 
   .remove-member {
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
     margin-right: 0.5em;
     opacity: 0.5;
     cursor: default;
