@@ -1,7 +1,7 @@
-import App from '~/browser/App.svelte'
-import '~/browser/app.css'
+import '~/browser/graphics/graphics.css'
+import Graphics from '~/browser/graphics/Graphics.svelte'
 
-const app = new App({
+const app = new Graphics({
   target: document.getElementById('app'),
 })
 
