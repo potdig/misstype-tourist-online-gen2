@@ -1,1 +1,1 @@
-type Subjects = [string, string]
+type Subjects = [string, string] // main, sub
