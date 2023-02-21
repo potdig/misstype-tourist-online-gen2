@@ -19,7 +19,13 @@
       "~/*": ["src/*"]
     }
   },
-  "include": ["src/**/*.d.ts", "src/**/*.svelte", "graphics/*.ts"],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.svelte",
+    "graphics/*.ts",
+    "dashboard/*.ts"
+  ],
   "exclude": ["src/extension/**/*.ts", "src/extension/**/*.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
