@@ -1,6 +1,13 @@
 <script lang="ts">
   import { applyScores, scores } from '../store/score'
   import Score from './lib/Score.svelte'
+
+  let name: string
+  let isGuest: boolean
+
+  function add() {
+    window.nodecg.sendMessage('addMember', { name, isGuest })
+  }
 </script>
 
 <p>
@@ -12,14 +19,14 @@
   {/each}
   <button on:click={applyScores}>適用</button>
   <div id="add-member">
-    <!-- <label for="new-name">新メンバー追加</label>
+    <p>新メンバー追加</p>
+    <input bind:value={name} type="text" />
+    <p>
+      <input bind:checked={isGuest} type="checkbox" />
+      <span>ゲスト</span>
+    </p>
     <br />
-    <input id="new-name" v-model="newName" type="text" />
-    <br />
-    <input id="is-guest" v-model="isGuest" type="checkbox" />
-    <label for="new-name">ゲスト</label>
-    <br />
-    <button @click="add">追加</button> -->
+    <button on:click={add}>追加</button>
   </div>
 </div>
 

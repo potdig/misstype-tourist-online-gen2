@@ -27,9 +27,19 @@ export default function initScores(nodecg: NodeCG) {
       name: score.name,
       score:
         score.score +
-        (args.find(arg => arg.name === score.name)?.addedScore || 0),
+        (args.find(({ name }) => name === score.name)?.addedScore || 0),
       isGuest: score.isGuest,
     }))
+
+    cb && cb(null, true)
+  })
+
+  nodecg.listenFor('addMember', ({ name, isGuest }, cb) => {
+    if (!cb || cb.handled) {
+      return
+    }
+
+    scoresRep.value = [...scoresRep.value, { name, score: 0, isGuest }]
 
     cb && cb(null, true)
   })

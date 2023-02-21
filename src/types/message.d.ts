@@ -5,6 +5,11 @@ type UpdateScoreArgs = {
   addedScore: number
 }
 
+type AddMemberArgs = {
+  name: string
+  isGuest: boolean
+}
+
 export type MessageMap = {
   updateScores: {
     data: UpdateScoreArgs[]
@@ -12,6 +17,10 @@ export type MessageMap = {
   }
   updateSubjects: {
     data: Subjects
+    result: boolean
+  }
+  addMember: {
+    data: AddMemberArgs
     result: boolean
   }
 }
