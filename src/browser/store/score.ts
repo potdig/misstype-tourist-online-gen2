@@ -16,20 +16,6 @@ const scores: Writable<DashboardScore[]> = writable([], set => {
   })
 })
 
-function updateAddedScore(name: string, addedScore: number | '') {
-  const current = get(scores)
-  const target = current.find(score => score.name === name)
-  if (target) {
-    scores.set([
-      ...current.filter(score => score.name !== name),
-      {
-        ...target,
-        addedScore,
-      },
-    ])
-  }
-}
-
 function applyScores() {
   window.nodecg.sendMessage(
     'updateScores',
@@ -40,4 +26,4 @@ function applyScores() {
   )
 }
 
-export { scores, updateAddedScore, applyScores, type DashboardScore }
+export { scores, applyScores, type DashboardScore }

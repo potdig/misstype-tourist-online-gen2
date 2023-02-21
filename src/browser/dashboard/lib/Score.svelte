@@ -1,12 +1,7 @@
 <script lang="ts">
-  import { updateAddedScore, type DashboardScore } from '~/browser/store/score'
+  import type { DashboardScore } from '~/browser/store/score'
 
   export let score: DashboardScore
-  let addedScore: number | ''
-
-  function setAddedScoreToStore() {
-    updateAddedScore(score.name, addedScore)
-  }
 
   function remove() {
     window.nodecg.sendMessage('deleteMember', score.name)
@@ -16,12 +11,7 @@
 <div class="member">
   <button class="remove-member" on:click={remove}>×</button>
   {score.name}{score.isGuest ? '（ゲスト）' : ''}: {score.score} +
-  <input
-    bind:value={addedScore}
-    on:change={setAddedScoreToStore}
-    type="number"
-    maxlength="3"
-  />
+  <input bind:value={score.addedScore} type="number" maxlength="3" />
 </div>
 
 <style>
