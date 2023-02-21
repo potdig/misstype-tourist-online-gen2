@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  nodecg:
+    image: potdig/misstype-tourist-online-nodecg
+    build:
+      context: .
+    ports:
+      - 9090:9090

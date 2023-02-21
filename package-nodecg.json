@@ -1,0 +1,39 @@
+{
+  "name": "misstype-tourist-online-gen2",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "nodecg": {
+    "compatibleRange": "^1.8.0",
+    "dashboardPanels": [
+      {
+        "name": "subjects",
+        "title": "キャプション",
+        "width": 2,
+        "headerColor": "#2d4e8a",
+        "file": "subjects.html"
+      },
+      {
+        "name": "scores",
+        "title": "スコア",
+        "width": 3,
+        "headerColor": "#2d4e8a",
+        "file": "scores.html"
+      }
+    ],
+    "graphics": [
+      {
+        "file": "index.html",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "mount": [
+      {
+        "directory": "assets",
+        "endpoint": "assets"
+      }
+    ]
+  }
+}
