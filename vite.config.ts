@@ -13,6 +13,7 @@ export default defineConfig({
       input: {
         'graphics/index': resolve(__dirname, 'graphics/index.html'),
         'dashboard/scores': resolve(__dirname, 'dashboard/scores.html'),
+        'dashboard/subjects': resolve(__dirname, 'dashboard/subjects.html'),
       },
     },
   },
