@@ -44,6 +44,9 @@
     margin-right: 0.5em;
     opacity: 0.5;
     cursor: default;
+    color: white;
+    font-size: 1.3em;
+    padding: 0;
   }
 
   .remove-member:hover {
