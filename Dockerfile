@@ -23,4 +23,5 @@ COPY --from=nodecg /app/nodecg ./nodecg
 COPY --from=build /build/dist ./nodecg/bundles/${LAYOUTS_NAME}/
 COPY package-nodecg.json ./nodecg/bundles/${LAYOUTS_NAME}/package.json
 WORKDIR /app/nodecg
+EXPOSE 9090
 CMD ["node", "index.js"]
