@@ -2,16 +2,16 @@
 FROM node:lts-alpine AS nodecg
 WORKDIR /app
 RUN apk --no-cache add git &&\
-    git clone https://github.com/nodecg/nodecg.git &&\
+    git clone --depth 1 --branch v2.1.11 https://github.com/nodecg/nodecg.git &&\
     cd nodecg &&\
-    npm install --production
+    npm install &&\
+    npm run build
 
 # Build apps
 FROM node:lts-alpine AS build
 WORKDIR /build
 COPY . ./
-RUN apk add --no-cache python3 alpine-sdk &&\
-    npm install &&\
+RUN npm install &&\
     npm run build &&\
     npm run build:extension
 
