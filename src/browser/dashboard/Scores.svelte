@@ -4,6 +4,15 @@
 
   let name: string
   let isGuest: boolean
+  let isDisabled: boolean
+
+  function apply() {
+    isDisabled = true
+    applyScores()
+    setTimeout(() => {
+      isDisabled = false
+    }, 5000)
+  }
 
   function add() {
     window.nodecg.sendMessage('addMember', { name, isGuest })
@@ -17,7 +26,7 @@
   {#each $scores as score}
     <Score {score} />
   {/each}
-  <button on:click={applyScores}>適用</button>
+  <button on:click={apply} disabled={isDisabled}>適用</button>
   <div id="add-member">
     <p>新メンバー追加</p>
     <input bind:value={name} type="text" />
