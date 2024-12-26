@@ -14,6 +14,12 @@ const stub: DashboardScore[] = [
   },
   {
     name: 'testB',
+    score: 10,
+    isGuest: false,
+    addedScore: 0,
+  },
+  {
+    name: 'guest',
     score: 100,
     isGuest: true,
     addedScore: 0,
