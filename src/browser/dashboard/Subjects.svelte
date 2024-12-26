@@ -8,4 +8,4 @@
 
 <p>メイン：<input type="text" bind:value={$subjects[0]} /></p>
 <p>サブ：<input type="text" bind:value={$subjects[1]} /></p>
-<button on:click={apply}>適用</button>
+<button onclick={apply}>適用</button>

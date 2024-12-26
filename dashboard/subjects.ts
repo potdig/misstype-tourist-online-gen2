@@ -1,7 +1,8 @@
+import { mount } from 'svelte'
 import Subjects from '~/browser/dashboard/Subjects.svelte'
 
-const app = new Subjects({
-  target: document.getElementById('app'),
+const app = mount(Subjects, {
+  target: document.getElementById('app')!,
 })
 
 export default app

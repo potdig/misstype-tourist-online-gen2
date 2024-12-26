@@ -1,7 +1,11 @@
 <script lang="ts">
   import type { DashboardScore } from '~/browser/store/score'
 
-  export let score: DashboardScore
+  interface Props {
+    score: DashboardScore
+  }
+
+  let { score = $bindable() }: Props = $props()
 
   function remove() {
     window.nodecg.sendMessage('deleteMember', score.name)
@@ -9,7 +13,7 @@
 </script>
 
 <div class="member">
-  <button class="remove-member" on:click={remove}>×</button>
+  <button class="remove-member" onclick={remove}>×</button>
   {score.name}{score.isGuest ? '（ゲスト）' : ''}: {score.score} +
   <input bind:value={score.addedScore} type="number" maxlength="3" />
 </div>

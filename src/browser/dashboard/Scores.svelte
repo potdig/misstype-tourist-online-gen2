@@ -2,9 +2,9 @@
   import { applyScores, scores } from '../store/score'
   import Score from './lib/Score.svelte'
 
-  let name: string
-  let isGuest: boolean
-  let isDisabled: boolean
+  let name: string = $state('')
+  let isGuest: boolean = $state(false)
+  let isDisabled: boolean = $state(false)
 
   function apply() {
     isDisabled = true
@@ -26,7 +26,7 @@
   {#each $scores as score}
     <Score {score} />
   {/each}
-  <button on:click={apply} disabled={isDisabled}>適用</button>
+  <button onclick={apply} disabled={isDisabled}>適用</button>
   <div id="add-member">
     <p>新メンバー追加</p>
     <input bind:value={name} type="text" />
@@ -35,7 +35,7 @@
       <span>ゲスト</span>
     </p>
     <br />
-    <button on:click={add}>追加</button>
+    <button onclick={add}>追加</button>
   </div>
 </div>
 
