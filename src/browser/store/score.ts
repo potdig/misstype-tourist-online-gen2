@@ -5,15 +5,31 @@ type DashboardScore = Score & {
   addedScore: number | ''
 }
 
-const scores = writable<DashboardScore[]>([], set => {
-  window.nodecg.Replicant('scores').on('change', newValue => {
-    set(
-      newValue.map(score => ({
-        ...score,
-        addedScore: 0,
-      }))
-    )
-  })
+const stub: DashboardScore[] = [
+  {
+    name: 'testA',
+    score: 0,
+    isGuest: false,
+    addedScore: 0,
+  },
+  {
+    name: 'testB',
+    score: 100,
+    isGuest: true,
+    addedScore: 0,
+  },
+]
+
+const scores = writable<DashboardScore[]>(stub, set => {
+  if (window.nodecg)
+    window.nodecg.Replicant('scores').on('change', newValue => {
+      set(
+        newValue.map(score => ({
+          ...score,
+          addedScore: 0,
+        }))
+      )
+    })
 })
 
 function applyScores() {
