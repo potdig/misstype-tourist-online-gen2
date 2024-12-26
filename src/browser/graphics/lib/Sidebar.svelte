@@ -3,28 +3,50 @@
 </script>
 
 <div id="side">
-  {#each $scores as score}
-    <div class={`member ${score.isGuest ? 'guest' : ''}`}>
-      <span class="border-2">{score.name}</span>
-      <span class="score border-2">{score.score}点</span>
-    </div>
-  {/each}
+  <h1>参加メンバー</h1>
+  <div id="members">
+    {#each $scores as score}
+      <div class={`member ${score.isGuest ? 'guest' : ''}`}>
+        {score.name}
+      </div>
+    {/each}
+  </div>
 </div>
 
-<style scoped>
+<style scoped lang="scss">
   #side {
     font-size: 1.6em;
-    padding-top: 1em;
-    margin-left: calc(1920px * 0.01);
+    margin-left: calc(1920px * 0.005);
+  }
+
+  h1 {
+    font-size: 1em;
+  }
+
+  #members {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 
   .member {
     display: flex;
     flex-direction: column;
+    padding-left: 28px;
+    font-size: 24px;
+    line-height: 32px;
+
+    &:nth-of-type(odd) {
+      color: var(--color-1);
+    }
+
+    &:nth-of-type(even) {
+      color: var(--color-2);
+    }
   }
 
   .member.guest {
-    color: lightskyblue;
+    color: orangered;
   }
 
   .score {
