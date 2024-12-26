@@ -1,11 +1,11 @@
-import { get, writable, type Writable } from 'svelte/store'
+import { get, writable } from 'svelte/store'
 import type { Score } from '~/types/score'
 
 type DashboardScore = Score & {
   addedScore: number | ''
 }
 
-const scores: Writable<DashboardScore[]> = writable([], set => {
+const scores = writable<DashboardScore[]>([], set => {
   window.nodecg.Replicant('scores').on('change', newValue => {
     set(
       newValue.map(score => ({
@@ -26,4 +26,4 @@ function applyScores() {
   )
 }
 
-export { scores, applyScores, type DashboardScore }
+export { applyScores, scores, type DashboardScore }
